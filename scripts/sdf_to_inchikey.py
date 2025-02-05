@@ -12,6 +12,8 @@ import itertools
 import pandas as pd
 import numpy as np
 
+# This exmaple script is written to deal with SDF files as provided by the commercial vendor Selleck chemicals.
+#        Adaptions will be neccessary if a SDF from a different source is used. 
 
 # Step 1: 
 # read the molecules from the SDF file using a context manager 
