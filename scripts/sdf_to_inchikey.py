@@ -60,7 +60,7 @@ from chembl_structure_pipeline import standardizer
 molecule_list = list(map(standardizer.standardize_mol, molecule_list))
 
 
-Step 3: 
+# Step 3: 
 # get parent molecule 
 # note: this resturns a tuple for which the first entry contains the molecules (standardizer is imported from chembl_structure_pipeline)
 
@@ -75,7 +75,7 @@ inchi_from_mol = list(map(Chem.rdinchi.MolToInchi, molecule_list))
 inchi_from_mol = [x[0] for x in inchi_from_mol]
 inchikey_from_inchi = list(map(Chem.rdinchi.InchiToInchiKey, inchi_from_mol))
 
-Step 4:
+# Step 4:
 # save the InChIKeys with the catalog numbers as csv 
 df_out = pd.DataFrame({'InChIKey':inchikey_from_inchi})
 df_out['catalog_number'] = list(my_molecule_dict.keys())
